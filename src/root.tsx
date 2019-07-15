@@ -2,16 +2,16 @@ import App from 'components/App';
 import * as React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-// import { configureStore } from 'store';
+import { configureStore } from 'store';
 
-// const store = configureStore;
+const store = configureStore;
 
 const Root: React.FC<{}> = () => (
-  // <Provider store={store}>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  // </Provider>
+  </Provider>
 );
 
 export default Root;
