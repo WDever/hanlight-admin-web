@@ -1,16 +1,20 @@
 import React from 'react';
 
-import MainComponent from 'components/main';
+import AutoLoginComponent from 'components/auto/autoLogin';
 import LoginComponent from 'components/user/login';
+import MainPage from 'pages/main';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 const App: React.FC = () => {
   return (
-    <Switch>
-      <Route exact={true} path="/user/login" component={LoginComponent} />
-      <Route path="/" component={MainComponent} />
-      <Redirect to="/" />
-    </Switch>
+    <>
+      <AutoLoginComponent />
+      <Switch>
+        <Route exact={true} path="/user/login" component={LoginComponent} />
+        <Route path="/" component={MainPage} />
+        <Redirect to="/" />
+      </Switch>
+    </>
   );
 };
 

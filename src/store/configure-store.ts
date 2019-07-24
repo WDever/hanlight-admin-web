@@ -15,4 +15,3 @@ const configureStore = createStore(reducer, enhancer);
 sagaMiddleware.run(rootSaga);
 
 export { configureStore };
-
