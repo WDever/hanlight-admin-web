@@ -36,12 +36,12 @@ const BtnsWrapper = styled.div`
 const HTMainComponent: React.FC = () => {
   return (
     <Wrapper>
-      <BtnsWrapper>
+      {/* <BtnsWrapper>
         <div>체크 인</div>
         <div>체크 아웃</div>
         <div>체크 아웃 리스트</div>
         <div>점수 집계</div>
-      </BtnsWrapper>
+      </BtnsWrapper> */}
     </Wrapper>
   );
 };

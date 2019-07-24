@@ -3,10 +3,12 @@ import * as React from 'react';
 import { useInputs } from 'lib/hooks';
 import { useDispatch, useSelector } from 'react-redux';
 import { RouteComponentProps, withRouter } from 'react-router-dom';
-import { AppState, LOGIN, status } from 'store';
+import { AppState, LOGIN, status, userActions } from 'store';
 import styled from 'styled-components';
 
 const { useCallback, useEffect } = React;
+
+const { login } = userActions;
 
 const Form = styled.form`
   width: 100%;
@@ -44,7 +46,7 @@ const LoginComponent: React.FC<RouteComponentProps> = ({
   const submitLogin = useCallback(
     (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      dispatch({ type: LOGIN, payload: { id, password } });
+      dispatch(login({ id, password }));
     },
     [dispatch, id, password],
   );

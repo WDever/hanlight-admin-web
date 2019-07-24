@@ -1,5 +1,6 @@
 import * as React from 'react';
 
+import CheckInPage from 'pages/hanseithon/checkIn';
 import HTMainPage from 'pages/hanseithon/main';
 import { Redirect, Route, Switch } from 'react-router-dom';
 

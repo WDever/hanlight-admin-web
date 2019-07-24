@@ -48,7 +48,7 @@ const AutoLoginComponent: React.FC<RouteComponentProps> = ({
 }) => {
   const dispatch = useDispatch();
   const getUserStatus = useSelector<AppState, status>(
-    state => state.user.getUserStatus,
+    ({ user }) => user.getUserStatus,
   );
   const prevProps = usePrevious({ getUserStatus });
 
@@ -68,7 +68,8 @@ const AutoLoginComponent: React.FC<RouteComponentProps> = ({
   useEffect(() => {
     if (prevProps) {
       if (
-        (prevProps.getUserStatus && getUserStatus === 'success') ||
+        prevProps.getUserStatus === 'pending' &&
+        getUserStatus === 'success' &&
         location.pathname.includes('/user')
       ) {
         history.push('/');
